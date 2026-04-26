@@ -3,10 +3,17 @@ import streamlit as st
 from google import genai
 from google.genai import types
 from PIL import Image
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+client = genai.Client(api_key=os.getenv("GENAI_API_KEY"))
+
+
 
 st.set_page_config(page_title="AI Landscaping Visualizer", layout="centered")
 
-client = genai.Client(api_key="AIzaSyAGOSBtvK_dJ26fxqeWftb1SwPyJDMh0C8")
 
 st.title("AI Landscaping Visualizer")
 
